@@ -140,9 +140,12 @@ if __name__ == '__main__':
     #创建测试数据
     account = random.choice(['130', '135', '136', '137', '139']) + str(random.randrange(99999999))
     name = '测试' + str(random.randint(0, 100))
-    province = random.choice([110000, 130000, 310000, 350000, 540000,510000])
-    city = random.choice([110000, 130200, 310000, 350600, 540100, 510100])
-    district = random.choice([110101, 130205, 310109, 350628, 540102, 510181])
+    address = random.choice(['110000,110000,110101', '130000,130200,130205', '310000,310000,310109',
+                             '350000,350600,350628', '540000,540100,540102', '510000,510100,510181'])
+    province = address.split(',')[0]
+    city = address.split(',')[1]
+    district = address.split(',')[2]
+
     cnid = str(district) + str(random.randint(1970, 2020)) + '0' + str(random.randint(1, 9)) + str(random.randint(10, 30)) \
            + str(random.randint(0000, 9999))
     loan_id = '20200'+ str(random.randint(1, 7)) + str(random.randint(10, 30)) + '1200' + str(random.randint(1111, 9999))
